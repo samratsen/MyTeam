@@ -5,6 +5,7 @@ import android.content.Context;
 
 /**
  * Created by samratsen on 2/1/15.
+ * Application calss
  */
 public class TeamApp extends Application{
     private static Context context;
