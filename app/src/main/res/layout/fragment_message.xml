@@ -1,0 +1,173 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:isScrollContainer="true">
+
+    <RelativeLayout
+        android:id="@+id/common"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="5dip"
+        android:paddingLeft="5dip"
+        android:paddingRight="5dip"
+        android:paddingTop="5dip" >
+
+
+                <TextView
+                    android:id="@+id/To"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@android:color/black"
+                    android:text="To"/>
+
+                <EditText
+                    android:id="@+id/addressType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="7dp"
+                    android:background="@android:color/transparent"
+                    android:cursorVisible="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:hint=""
+                    android:imeOptions="flagNoExtractUi|actionDone"
+                    android:inputType="textNoSuggestions"
+                    android:minWidth="50dp"
+                    android:visibility="gone" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/chat_history_list_header_line"
+        android:layout_width="fill_parent"
+        android:layout_height="1dip"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/contact_list_hzl_line" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="bottom"
+        android:orientation="vertical" >
+
+        <ListView
+            android:id="@+id/chatlistview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="1dip"
+            android:layout_weight="1.0"
+            android:cacheColorHint="@android:color/white"
+            android:divider="@android:drawable/divider_horizontal_bright"
+            android:drawSelectorOnTop="true"
+            android:fadingEdge="none"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:scrollbarStyle="insideInset"
+            android:stackFromBottom="true"
+            android:transcriptMode="alwaysScroll"
+            android:descendantFocusability="afterDescendants"
+            android:textColor="@android:color/black"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/chatemptylist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="No History Found"
+            android:textColor="#8b8b8b"
+            android:textSize="15sp" />
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/chatfooterrelativelayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dip"
+                    android:paddingLeft="5dip"
+                    android:paddingRight="5dip"
+                    android:paddingTop="5dip" >
+
+                    <RelativeLayout
+                        android:id="@+id/editor_with_counter"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        android:addStatesFromChildren="true"
+                        android:background="@android:drawable/edit_text" >
+
+                        <EditText
+                            android:id="@+id/chatMessageArea"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:autoText="true"
+                            android:background="@null"
+                            android:capitalize="sentences"
+                            android:hint="Compose Message"
+                            android:imeOptions="actionSend|flagNoEnterAction"
+                            android:inputType="textShortMessage|textAutoCorrect|textCapSentences|textMultiLine"
+                            android:maxLength="1000"
+                            android:maxLines="4"
+                            android:textColor="@android:color/black"
+                            android:nextFocusRight="@+id/send_button" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentTop="true"
+                            android:background="#88000000"
+                            android:paddingLeft="3dip"
+                            android:paddingRight="3dip"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingLeft="2dp"
+                        android:gravity="center"
+                        android:layout_gravity="center_vertical"
+                        >
+
+                        <Button
+                            android:id="@+id/sendChatMsg"
+                            android:layout_width="30dp"
+                            android:layout_height="32dp"
+                            android:background="@drawable/button_send_selector"
+                            android:textColor="@android:color/black"
+                            android:nextFocusLeft="@+id/embedded_text_editor" />
+                        <TextView
+                            android:id="@+id/text_counter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="9sp"
+                            android:singleLine="true"
+                            android:paddingTop="2dp"
+                            android:gravity="center"
+                            android:textColor="@android:color/black"
+                            android:text="0/160"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</LinearLayout>

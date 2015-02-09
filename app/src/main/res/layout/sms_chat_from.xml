@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:connect="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <TextView
+        android:id="@+id/smsDateTime"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/sms_chat_to_profile_image_margin_top"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/smsName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/smsDateTime"
+        android:layout_marginLeft="@dimen/sms_chat_to_profile_image_margin_right"
+        android:layout_marginTop="@dimen/sms_chat_to_profile_image_margin_top"
+        android:singleLine="true"
+        android:textSize="12dp"
+        android:textStyle="normal"
+        android:textColor="@android:color/black"
+        android:visibility="gone" />
+
+    <com.mportal.team.myteam.apprtc.utils.CircularImageView
+        android:id="@+id/smsProfileImage"
+        android:layout_width="@dimen/sms_chat_to_profile_image_width"
+        android:layout_height="@dimen/sms_chat_to_profile_image_width"
+        android:layout_below="@+id/smsDateTime"
+        android:layout_marginLeft="@dimen/sms_chat_to_profile_image_margin_right"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/icon_avatar"
+        connect:border_width="0dp"
+        connect:shadow="false" />
+
+    <TextView
+        android:id="@+id/smsTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/smsProfileImage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/sms_chat_to_profile_image_margin_right"
+        android:layout_marginRight="@dimen/sms_chat_to_profile_image_margin_right"
+        android:layout_marginTop="@dimen/sms_chat_to_profile_image_margin_top"
+        android:gravity="center"
+        android:textSize="11sp"
+        android:textColor="@android:color/black"
+        android:textStyle="normal" />
+
+    <RelativeLayout
+        android:id="@+id/smsfromRelative"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/smsProfileImage"
+        android:layout_below="@+id/smsDateTime"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/smsProfileImage"
+        android:paddingRight="@dimen/sms_chat_margin_text_view" >
+
+        <LinearLayout
+            android:id="@+id/smfromlinear"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/conversation_bubble_blue"
+            android:orientation="horizontal"
+            android:padding="10dp" >
+
+            <TextView
+                android:id="@+id/smsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:duplicateParentState="true"
+                android:fadeScrollbars="false"
+                android:paddingLeft="@dimen/sms_chat_to_linear_text_view_padding"
+                android:paddingRight="@dimen/sms_chat_to_linear_text_view_padding"
+                android:paddingTop="5dp"
+                android:scrollbars="vertical"
+                android:textColor="#ffffff"
+                android:textIsSelectable="true"
+                android:textSize="@dimen/smsTo_textsize"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

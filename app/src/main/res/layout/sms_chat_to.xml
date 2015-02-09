@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:connect="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentRight="true" >
+
+    <TextView
+        android:id="@+id/smsDateTime"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/smsName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/smsDateTime"
+        android:layout_marginRight="@dimen/sms_chat_to_profile_image_margin_right"
+        android:layout_marginTop="@dimen/sms_chat_to_profile_image_margin_top"
+        android:singleLine="true"
+        android:textSize="12dp"
+        android:textColor="@android:color/black"
+        android:textStyle="normal" />
+
+    <com.mportal.team.myteam.apprtc.utils.CircularImageView
+        android:id="@+id/smsProfileImage"
+        android:layout_width="@dimen/sms_chat_to_profile_image_width"
+        android:layout_height="@dimen/sms_chat_to_profile_image_width"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/smsName"
+        android:layout_marginRight="@dimen/sms_chat_to_profile_image_margin_right"
+        android:layout_marginTop="@dimen/sms_chat_to_profile_image_margin_top"
+        android:src="@drawable/icon_avatar"
+        connect:border_width="0dp"
+        connect:shadow="false" />
+
+    <TextView
+        android:id="@+id/smsTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/smsProfileImage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginRight="@dimen/sms_chat_to_profile_image_margin_right"
+        android:layout_marginTop="@dimen/sms_chat_to_profile_image_margin_top"
+        android:gravity="center"
+        android:textSize="11dp"
+        android:textColor="@android:color/black"
+        android:textStyle="normal" />
+
+    <LinearLayout
+        android:id="@+id/smsChatToParentLinear"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/smsProfileImage"
+        android:layout_below="@+id/smsDateTime"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="@dimen/sms_chat_to_profile_image_margin_top"
+        android:layout_toLeftOf="@id/smsProfileImage"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/smsResendButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/button_resend"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:id="@+id/smsChatToLinear"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/conversation_bubble_teal"
+            android:padding="10dp"
+            android:paddingBottom="@dimen/sms_chat_to_linear_padding_bottom" >
+
+            <TextView
+                android:id="@+id/smsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:fadeScrollbars="false"
+                android:gravity="left"
+                android:paddingLeft="@dimen/sms_chat_to_linear_text_view_padding"
+                android:paddingRight="@dimen/sms_chat_to_linear_text_view_padding"
+                android:paddingTop="5dp"
+                android:scrollbars="vertical"
+                android:text="long text example abcde dfgef d 123434352 efdkns"
+                android:textColor="#ffffff"
+                android:textIsSelectable="true"
+                android:textSize="@dimen/smsTo_textsize"
+                android:textStyle="normal" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/smsDeliveryStatusText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/smsChatToParentLinear"
+        android:layout_marginLeft="50dp"
+        android:text="Sending..."
+        android:textColor="@android:color/black"
+        android:visibility="gone"/>
+
+</RelativeLayout>
